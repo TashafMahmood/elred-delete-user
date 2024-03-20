@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "AvenirPro-regular";
+  src: url("./assets/fonts/Avenir_Next_Pro/AvenirNextLTPro-Regular.otf")
+    format("opentype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "AvenirPro-medium";
+  src: url("./assets/fonts/Avenir_Next_Pro/AvenirNextLTPro-Medium.otf")
+    format("opentype");
+  /* You may include additional font properties if needed */
+}
+
+* {
+  font-family: "AvenirNextLTPro-Medium", sans-serif;
 }
