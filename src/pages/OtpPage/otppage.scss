@@ -44,3 +44,15 @@
 .border_error {
   border: 1px solid #e72d38;
 }
+
+.resend-otp-link-txt {
+  cursor: pointer;
+  margin-top: 25px;
+  color: rgb(231, 45, 56, 1);
+  font-family: "AvenirPro-medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: right;
+  text-decoration: underline;
+}
