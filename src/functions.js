@@ -10,3 +10,7 @@ export const handleChange = (event, setValue) => {
     const onlyNumbers = inputValue.replace(/\D/g, ''); // Remove non-digit characters
     setValue(onlyNumbers.slice(0, 10)); // Limit to 10 digits
 };
+
+export const redirectToHome = () => {
+    window.location.reload()
+}
