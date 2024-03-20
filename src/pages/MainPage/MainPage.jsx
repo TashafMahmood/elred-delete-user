@@ -13,7 +13,7 @@ const MainPage = ({ setPage }) => {
                     Are you sure you want to delete your account?
                 </div>
             </div>
-            <Button onClickFunction={handleClick} />
+            <Button onClickFunction={handleClick} title={'Get OTP'} />
         </div>
     )
 }

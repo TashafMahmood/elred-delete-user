@@ -1,11 +1,11 @@
 import React from 'react'
 import './button.scss'
 
-const Button = ({ onClickFunction }) => {
+const Button = ({ onClickFunction, title }) => {
     return (
         <div className='btn_div'>
             <button className='btn button_main' onClick={onClickFunction} >
-                Get OTP
+                {title}
             </button>
         </div>
     )
