@@ -27,6 +27,14 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  .incorrect-otp-error {
+    color: #be212a;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    top: 110%;
+  }
 }
 
 .custom_input_one {

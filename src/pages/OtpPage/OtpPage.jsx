@@ -46,6 +46,9 @@ const OtpPage = ({ number }) => {
                   />
                 )}
               />
+              {incorrectOtp ? (
+                <div class="incorrect-otp-error">Invalid OTP entered</div>
+              ) : null}
             </div>
             <div
               className="resend-otp-link-txt"
@@ -56,6 +59,7 @@ const OtpPage = ({ number }) => {
           </div>
           <Button
             onClickFunction={() => setSuccess(true)}
+            // onClickFunction={() => setIncorrectOtp(true)}
             title={"Submit delete request"}
           />
         </div>
