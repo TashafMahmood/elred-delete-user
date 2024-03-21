@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./otppage.scss";
 import Button from "../../components/Button/Button";
 import TitleText from "../../components/TitleText/TitleText";
@@ -6,6 +6,7 @@ import OTPInput from "react-otp-input";
 import SuccessPage from "../SuccessPage/SuccessPage";
 import NoAccountModal from "../../components/NoAccountModal/NoAccountModal";
 import ConfirmationPopup from "../../components/ConfirmationPopup/ConfirmationPopup";
+import { useCountdownTimer } from "../../components/Hooks/useCountDownTimer";
 
 const OtpPage = ({ number }) => {
   const [otp, setOtp] = useState("");
@@ -13,6 +14,12 @@ const OtpPage = ({ number }) => {
   const [success, setSuccess] = useState(false);
   const [showNoAccountPopup, setShowNoAccountPopup] = useState(false);
   const [confirm, setConfirm] = useState(false)
+  const [startTimer, setStartTimer] = useState(false);
+  const { timer, formatTime, resetTimer } = useCountdownTimer(60, startTimer);
+
+  useEffect(() => {
+    setStartTimer(true);
+  }, []);
 
   return (
     <>
@@ -48,13 +55,25 @@ const OtpPage = ({ number }) => {
                   />
                 )}
               />
+              {incorrectOtp ? (
+                <div class="incorrect-otp-error">Invalid OTP entered</div>
+              ) : null}
             </div>
-            <div
-              className="resend-otp-link-txt"
-              onClick={() => setShowNoAccountPopup(true)}
-            >
-              Resend OTP
-            </div>
+            {timer > 0 && startTimer ? (
+              <div className="otp-time-remaining">
+                Time Remaining: {timer > 0 && formatTime(timer)}
+              </div>
+            ) : (
+              <div className="resend-otp-link-container">
+                <span
+                  className="resend-otp-link-txt"
+                  onClick={() => setShowNoAccountPopup(true)}
+                  // onClick={resetTimer}
+                >
+                  Resend OTP
+                </span>
+              </div>
+            )}
           </div>
           <Button
             onClickFunction={() => setConfirm(true)}

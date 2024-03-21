@@ -27,6 +27,14 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  .incorrect-otp-error {
+    color: #be212a;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    top: 110%;
+  }
 }
 
 .custom_input_one {
@@ -45,14 +53,28 @@
   border: 1px solid #e72d38;
 }
 
-.resend-otp-link-txt {
-  cursor: pointer;
+.resend-otp-link-container {
   margin-top: 25px;
-  color: rgb(231, 45, 56, 1);
-  font-family: "AvenirPro-medium";
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.8px;
   text-align: right;
-  text-decoration: underline;
+
+  .resend-otp-link-txt {
+    cursor: pointer;
+    color: rgb(231, 45, 56, 1);
+    font-family: "AvenirPro-medium";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-decoration: underline;
+  }
+}
+
+.otp-time-remaining {
+  color: #000;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 16.8px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+  margin-top: 25px;
 }
