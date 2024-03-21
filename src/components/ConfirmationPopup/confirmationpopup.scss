@@ -63,15 +63,27 @@
         color: #747474;
       }
       .yes_btn {
-        background-color: #E72D38;
+        background-color: #e72d38;
         color: white;
       }
     }
   }
 }
 
+.offcanvas-backdrop.show {
+  left: 50% !important;
+  outline: none;
+  transform: translate(-50%) !important;
+  width: 375px;
+}
+
 @media (max-width: 500px) {
   .offcanvas.offcanvas-bottom {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .offcanvas-backdrop.show{
     max-width: 500px;
     width: 100%;
   }
