@@ -6,7 +6,7 @@ import OTPInput from "react-otp-input";
 import SuccessPage from "../SuccessPage/SuccessPage";
 import NoAccountModal from "../../components/NoAccountModal/NoAccountModal";
 
-const OtpPage = () => {
+const OtpPage = ({ number }) => {
   const [otp, setOtp] = useState("");
   const [incorrectOtp, setIncorrectOtp] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -22,7 +22,7 @@ const OtpPage = () => {
             <TitleText title={"One time password"} />
             <div className="main_page_desc">
               We have sent OTP to your registered mobile number{" "}
-              <span className="otp-page-phone-number">+91 458 687 2222</span>
+              <span className="otp-page-phone-number">+91 {number}</span>
             </div>
             <div className="otp-input-label">OTP</div>
             <div className="otp-input-wrapper-div">

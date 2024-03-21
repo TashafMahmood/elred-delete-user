@@ -5,9 +5,8 @@ import TitleText from '../../components/TitleText/TitleText'
 import { deleteInstructions } from '../../data'
 import { handleChange, handlePaste } from '../../functions'
 
-const MainPage = ({ setPage }) => {
+const MainPage = ({ setPage, number, setNumber }) => {
     const handleClick = () => { setPage(true) }
-    const [number, setNumber] = useState('');
 
     return (
         <div className='main_page'>

@@ -4,11 +4,12 @@ import OtpPage from '../OtpPage/OtpPage'
 
 const Home = () => {
     const [otpPage, setOtpPage] = useState(false)
+    const [number, setNumber] = useState('')
     return (
         <div>
             {
-                otpPage ? <OtpPage /> : <>
-                    <MainPage setPage={setOtpPage} /></>
+                otpPage ? <OtpPage number={number} /> : <>
+                    <MainPage setPage={setOtpPage} number={number} setNumber={setNumber} /></>
             }
         </div>
     )
