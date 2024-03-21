@@ -5,12 +5,14 @@ import TitleText from "../../components/TitleText/TitleText";
 import OTPInput from "react-otp-input";
 import SuccessPage from "../SuccessPage/SuccessPage";
 import NoAccountModal from "../../components/NoAccountModal/NoAccountModal";
+import ConfirmationPopup from "../../components/ConfirmationPopup/ConfirmationPopup";
 
 const OtpPage = ({ number }) => {
   const [otp, setOtp] = useState("");
   const [incorrectOtp, setIncorrectOtp] = useState(false);
   const [success, setSuccess] = useState(false);
   const [showNoAccountPopup, setShowNoAccountPopup] = useState(false);
+  const [confirm, setConfirm] = useState(false)
 
   return (
     <>
@@ -55,12 +57,13 @@ const OtpPage = ({ number }) => {
             </div>
           </div>
           <Button
-            onClickFunction={() => setSuccess(true)}
+            onClickFunction={() => setConfirm(true)}
             title={"Submit delete request"}
           />
         </div>
       )}
       {showNoAccountPopup ? <NoAccountModal /> : null}
+      {confirm ? <ConfirmationPopup confirm={confirm} setConfirm={setConfirm} setSuccess={setSuccess} /> : null}
     </>
   );
 };
